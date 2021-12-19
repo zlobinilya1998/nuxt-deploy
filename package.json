@@ -1,5 +1,5 @@
 {
-    "name": "ppd-landing-front",
+    "name": "custom-library",
     "version": "2.0.0",
     "private": true,
     "scripts": {
@@ -11,18 +11,9 @@
     "dependencies": {
         "vue-property-decorator": "9.0.2",
         "vue-class-component": "7.2.6",
-        "@glidejs/glide": "3.5.2",
         "@mdi/js": "^5.8.55",
-        "axios": "0.20.0",
         "core-js": "^3.15.1",
-        "imagesloaded": "^4.1.4",
-        "masonry-layout": "^4.2.2",
-        "nuxt": "^2.15.7",
-        "object-fit-images": "3.2.4",
-        "vue-the-mask": "^0.11.1",
-        "vue-youtube": "^1.4.0",
-        "vue2-touch-events": "^3.2.2",
-        "wavesurfer.js": "^5.0.1"
+        "nuxt": "^2.15.7"
     },
     "devDependencies": {
         "@nuxtjs/vuetify": "1.12.3",
