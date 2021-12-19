@@ -1,44 +1,41 @@
 <template>
-  <div>
-    <h1 class='h1 title' style='text-align: center;margin-top: 100px' :style="{opacity: opacity}">Custom Library</h1>
-    <div class='container'>
-      <div class='showcase'>
-        <p id='buttons'>Buttons</p>
-        <Button v-text='"Primary"' primary @click='dividerColor = dividerColors.primary'/>
-        <Button v-text='"Secondary"' secondary @click='dividerColor = dividerColors.secondary'/>
-        <p id='dividers'>Dividers</p>
-        <Divider :color="dividerColor"/>
-      </div>
-    </div>
+  <div class='products-wrapper'>
+    <img class='product'  style='grid-column: span 2;' src='images/sale.png' alt='photo'/>
+    <img class='product'  style='grid-row: span 2;' src='images/girl.png' alt='photo'/>
+    <img class='product'  style='grid-row: span 2;' src='images/girl2.png' alt='photo'/>
+    <img class='product'  style='grid-column: span 2;' src='images/sale2.png' alt='photo'/>
+    <img class='product'  style='grid-row: span 2;' src='images/girl3.png' alt='photo'/>
+    <img class='product'  style='grid-row: span 2;' src='images/girl4.png' alt='photo'/>
+    <img class='product'  style='grid-column: span 2;' src='images/girl5.png' alt='photo'/>
+    <img class='product'  style='grid-column: span 2;' src='images/girl6.png' alt='photo'/>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import {Component } from 'vue-property-decorator';
-import Button from '~/components/Button.vue'
-import Divider from '~/components/Divider.vue'
-@Component({
-  components: { Divider, Button }
-})
+@Component
 export default class Index extends Vue {
-  opacity = '0';
-  dividerColors = DividerColors;
-  dividerColor = '#FFFFFF';
-  mounted(){
-    this.opacity = '1';
-  }
 
-}
-enum DividerColors {
-  primary = '#66FCF1',
-  secondary = '#C5C6C7',
 }
 </script>
 <style scoped lang='scss'>
-.title {
-  transition: .3s;
+.products-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,270px));
+  grid-gap: 15px;
+  grid-auto-rows: 180px;
 }
-.showcase {
+.product {
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .3s;
+  filter: grayscale(20%);
+  max-width: 100%;
+  width: 100%;object-fit: cover;
+  height: 100%;
+  &:hover {
+    filter: grayscale(0);
+  }
 }
 </style>

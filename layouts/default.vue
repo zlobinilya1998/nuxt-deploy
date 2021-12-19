@@ -1,7 +1,10 @@
 <template>
-  <div style='display: flex;min-height: 200vh' class='layout'>
+  <div class='layout'>
     <Header/>
-    <Nuxt style='flex: 1'/>
+    <div style='flex: 1;display: flex;padding: 20px'>
+      <div style='flex: 0 0 300px'/>
+      <Nuxt style='flex: 1 1 auto' />
+    </div>
   </div>
 </template>
 
@@ -18,7 +21,10 @@ export default class DefaultLayout extends Vue {
 
 <style lang='scss' scoped>
 .layout {
-  background-color: $bg-primary;
+  background-color: #FFFFFF;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 </style>
