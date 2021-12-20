@@ -27,13 +27,15 @@ export default class Index extends Vue {
   grid-auto-rows: 180px;
 }
 .product {
-  border-radius: 10px;
   cursor: pointer;
   transition: .3s;
   filter: grayscale(20%);
   max-width: 100%;
-  width: 100%;object-fit: cover;
+  width: 100%;
+  object-fit: cover;
   height: 100%;
+  overflow: hidden;
+  border-radius: 11px;
   &:hover {
     filter: grayscale(0);
   }
