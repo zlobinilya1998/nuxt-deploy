@@ -11,7 +11,7 @@ export type GamePoster = {
 
 export const games: Game[] = [
   {
-    title: 'Cyberpunk',
+    title: 'Cyberpunk 2077',
     discount: 0.35,
     price: 1990,
     img: require('@/assets/games/cyberpunk.jpeg'),

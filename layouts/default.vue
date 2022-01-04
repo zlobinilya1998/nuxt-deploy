@@ -21,7 +21,7 @@ export default class DefaultLayout extends Vue {
 
 <style lang='scss' scoped>
 .layout {
-  background-color: #FFFFFF;
+  background-color: #0c0b0b;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

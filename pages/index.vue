@@ -1,14 +1,15 @@
 <template>
   <div class='games-wrapper'>
     <div class='game' v-for='(game,index) in games' :key='index'>
-      <img :src='game.img' class='game-img' alt='game-img'/>
+      <img :src='game.img' ref='game-img' class='game-img' alt='game-img'/>
       <div class='game-price'>
+        <h3 class='game-title' v-text='game.title' />
         <div class='pct-price' v-text='`-` + game.discount * 100 + `%`'/>
         <del class='started-price' v-text='game.price + ` руб.`'/>
         <div class='final-price' v-text='priceWithDiscount(game) + ` руб.`'/>
       </div>
       <div class='game-expand'>
-        <div class='expand-game' v-for='(poster, index) in game.gamePosters' :key='index' :style='{backgroundImage: `url(${poster.img})`}'/>
+        <div @mouseenter='setNewBackground(index,poster.img)' class='expand-game' v-for='(poster, idx) in game.gamePosters' :key='index' :style='{backgroundImage: `url(${poster.img})`}'/>
       </div>
     </div>
   </div>
@@ -16,15 +17,25 @@
 
 <script lang='ts'>
 import Vue from 'vue'
-import { Component } from 'vue-property-decorator'
+import { Component, Ref } from 'vue-property-decorator'
 import { Game, games, priceWithDiscount } from '~/models/Entities/games'
 
 
 @Component
 export default class Index extends Vue {
+  @Ref('game-img') gameImg;
   games = games;
   priceWithDiscount(game: Game){
     return priceWithDiscount(game)
+  }
+  setNewBackground(index:number,posterImg: string){
+    const img = this.gameImg[index];
+    img.src = posterImg;
+  }
+  clearBackground(index){
+    const img = this.gameImg[index];
+    const defaultImg = this.games[index].img;
+    img.src = defaultImg;
   }
 }
 </script>
@@ -32,7 +43,7 @@ export default class Index extends Vue {
 .games-wrapper {
   display: grid;
   grid-template-columns: repeat(2, minmax(0,1fr));
-  grid-auto-rows: 400px;
+  grid-auto-rows: 375px;
   grid-gap: 20px;
   justify-content: center;
   max-width: 1440px;
@@ -53,10 +64,18 @@ export default class Index extends Vue {
     }
     & .game-price {
       bottom: 35%;
+      border: 1px solid skyblue;
     }
     & .game-img {
       transform: scale(1.05);
     }
+  }
+  .game-title {
+    font-size: 1.4rem;
+    z-index: 1;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-family: Montserrat, sans-serif;
   }
   .game-price {
     position: absolute;
@@ -64,7 +83,7 @@ export default class Index extends Vue {
     right: 0;
     display: grid;
     align-items: center;
-    grid-template-columns: repeat(3,minmax(50px,auto));
+    grid-template-columns: repeat(4,minmax(50px,auto));
     text-align: center;
     background: rgba(0, 0, 0);
     transition: .6s;
@@ -80,14 +99,16 @@ export default class Index extends Vue {
     width: 100%;
     max-width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     transition: .6s;
   }
   .pct-price {
-    background: #b2f64c;
+    background: #94c941;
     color: black;
     font-weight: bold;
     font-size: 1.3rem;
+    transition: .3s;
+    border: 1px solid transparent;
   }
   .started-price {
     color: #afadad;
@@ -95,6 +116,7 @@ export default class Index extends Vue {
   .final-price {
     color: #FFFFFF;
     font-size: 1.3rem;
+    font-weight: bold;
   }
   .game-expand {
     position: absolute;

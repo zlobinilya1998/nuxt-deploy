@@ -1,6 +1,8 @@
 <template>
   <nav class='header'>
-    <nuxt-link :to='link.url' v-for='link in navigation' :key='link.id' v-text='link.text' class='navigation-link'/>
+    <div class='header-inner'>
+      <nuxt-link :to='link.url' v-for='link in navigation' :key='link.id' v-text='link.text' class='navigation-link'/>
+    </div>
   </nav>
 </template>
 
@@ -9,22 +11,37 @@ import { Component, Vue } from "vue-property-decorator"
 
 @Component({})
 export default class Header extends Vue {
-  navigation = [{text: 'Products',id: 'buttons',url:'products'}];
-  scrollIntoView(id){
-    document.querySelector('#' + id)?.scrollIntoView({
-      behavior: "smooth",
-      block: 'start'
-    })
-  }
+  navigation = [{text: 'Магазин',id: 'shop',url:'/'},{text: 'Библиотека',id: 'library',url:'/library'},{text: 'Сообщество',id: 'community',url:'/community'},];
 }
 </script>
 
 <style lang="scss" scoped>
  .header {
-   max-width: 1440px;
-   padding: 0 20px;
-   margin: 0 auto;
-   display: flex;
-   min-height: 75px;
+   border-bottom: 1px solid gray;
+   .header-inner {
+     max-width: 1440px;
+     margin: 0 auto;
+     padding: 0 20px;
+     display: flex;
+     align-items: center;
+     min-height: 65px;
+   }
+   .navigation-link {
+     font-size: 1.5rem;
+     text-decoration: unset;
+     color: #C5C6C7;
+     transition: .3s;
+     font-family: Roboto sans-serif;
+     &:not(:last-child) {
+       margin-right: 20px;
+     }
+     &:hover {
+       color: #FFFFFF;
+     }
+   }
+   .nuxt-link-exact-active {
+     font-weight: bold;
+     color: #FFFFFF;
+   }
  }
 </style>
