@@ -2,7 +2,6 @@
   <div class='layout'>
     <Header/>
     <div style='flex: 1;display: flex;padding: 20px'>
-      <Sidebar style='flex: 0 0 300px'/>
       <Nuxt style='flex: 1 1 auto' />
     </div>
   </div>
