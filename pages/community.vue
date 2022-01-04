@@ -1,15 +1,15 @@
 <template>
-  <div>Product page</div>
+  <div>Vue class component</div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator"
 
 @Component({})
-export default class  extends Vue {
+export default class Community extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 </style>

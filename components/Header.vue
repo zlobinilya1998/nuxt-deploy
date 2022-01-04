@@ -11,7 +11,7 @@ import { Component, Vue } from "vue-property-decorator"
 
 @Component({})
 export default class Header extends Vue {
-  navigation = [{text: 'Магазин',id: 'shop',url:'/'},{text: 'Библиотека',id: 'library',url:'/library'},{text: 'Сообщество',id: 'community',url:'/community'},];
+  navigation = [{text: 'Магазин',url:'/'},{text: 'Библиотека',url:'/library'},{text: 'Сообщество',url:'/community'},];
 }
 </script>
 
@@ -40,7 +40,6 @@ export default class Header extends Vue {
      }
    }
    .nuxt-link-exact-active {
-     font-weight: bold;
      color: #FFFFFF;
    }
  }
