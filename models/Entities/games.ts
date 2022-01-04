@@ -44,6 +44,40 @@ export const games: Game[] = [
       },
     ]
   },
+  {
+    title: 'Resident Evil Village',
+    discount: 0.35,
+    price: 2699,
+    img: require('@/assets/games/re.jpeg'),
+    gamePosters: [
+      {
+        img: require('@/assets/games/re1.jpg'),
+      },
+      {
+        img: require('@/assets/games/re2.jpg'),
+      },
+      {
+        img: require('@/assets/games/re3.jpg'),
+      },
+    ]
+  },
+  {
+    title: 'DARK SOULS |||',
+    discount: 0.75,
+    price: 2500,
+    img: require('@/assets/games/ds.jpg'),
+    gamePosters: [
+      {
+        img: require('@/assets/games/ds1.jpg'),
+      },
+      {
+        img: require('@/assets/games/ds2.jpg'),
+      },
+      {
+        img: require('@/assets/games/ds3.jpg'),
+      },
+    ]
+  },
 ]
 
 export const priceWithDiscount = (game: Game) => {

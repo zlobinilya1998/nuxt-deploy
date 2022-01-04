@@ -32,7 +32,7 @@ export default class Index extends Vue {
 .games-wrapper {
   display: grid;
   grid-template-columns: repeat(2, minmax(0,1fr));
-  grid-auto-rows: minmax(400px, 400px);
+  grid-auto-rows: 400px;
   grid-gap: 20px;
   justify-content: center;
   max-width: 1440px;
