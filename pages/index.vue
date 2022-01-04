@@ -1,13 +1,14 @@
 <template>
   <div class='games-wrapper'>
-    <div class='game' v-for='(game,index) in games' :key='index' :style='{backgroundImage: `url(${game.img})`}'>
+    <div class='game' v-for='(game,index) in games' :key='index'>
+      <img :src='game.img' class='game-img' alt='game-img'/>
       <div class='game-price'>
         <div class='pct-price' v-text='`-` + game.discount * 100 + `%`'/>
         <del class='started-price' v-text='game.price + ` руб.`'/>
         <div class='final-price' v-text='priceWithDiscount(game) + ` руб.`'/>
       </div>
       <div class='game-expand'>
-        <div class='expand-game' v-for='(subgame, index) in game.subgames' :key='index' :style='{backgroundImage: `url(${subgame.img})`}'/>
+        <div class='expand-game' v-for='(poster, index) in game.gamePosters' :key='index' :style='{backgroundImage: `url(${poster.img})`}'/>
       </div>
     </div>
   </div>
@@ -16,108 +17,21 @@
 <script lang='ts'>
 import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
+import { Game, games, priceWithDiscount } from '~/models/Entities/games'
+
 
 @Component
 export default class Index extends Vue {
-  games: Game[] = [
-    {
-      title: 'Cyberpunk',
-      discount: 0.35,
-      price: 1990,
-      img: require('@/assets/games/cyberpunk.jpeg'),
-      subgames: [
-        {
-          title: 'Cyberpunk',
-          discount: 0.35,
-          price: 1990,
-          img: require('@/assets/games/cyberpunk2.jpg'),
-        },
-        {
-          title: 'Cyberpunk',
-          discount: 0.35,
-          price: 1990,
-          img: require('@/assets/games/cyberpunk3.jpg'),
-        },
-        {
-          title: 'Cyberpunk',
-          discount: 0.35,
-          price: 1990,
-          img: require('@/assets/games/cyberpunk4.jpg'),
-        },
-      ]
-    },
-    {
-      title: 'Cyberpunk',
-      discount: 0.35,
-      price: 1990,
-      img: require('@/assets/games/cyberpunk.jpeg'),
-      subgames: [
-        {
-          title: 'Cyberpunk',
-          discount: 0.35,
-          price: 1990,
-          img: require('@/assets/games/cyberpunk2.jpg'),
-        },
-        {
-          title: 'Cyberpunk',
-          discount: 0.35,
-          price: 1990,
-          img: require('@/assets/games/cyberpunk3.jpg'),
-        },
-        {
-          title: 'Cyberpunk',
-          discount: 0.35,
-          price: 1990,
-          img: require('@/assets/games/cyberpunk4.jpg'),
-        },
-      ]
-    },
-    {
-      title: 'Cyberpunk',
-      discount: 0.35,
-      price: 1990,
-      img: require('@/assets/games/cyberpunk.jpeg'),
-      subgames: [
-        {
-          title: 'Cyberpunk',
-          discount: 0.35,
-          price: 1990,
-          img: require('@/assets/games/cyberpunk2.jpg'),
-        },
-        {
-          title: 'Cyberpunk',
-          discount: 0.35,
-          price: 1990,
-          img: require('@/assets/games/cyberpunk3.jpg'),
-        },
-        {
-          title: 'Cyberpunk',
-          discount: 0.35,
-          price: 1990,
-          img: require('@/assets/games/cyberpunk4.jpg'),
-        },
-      ]
-    },
-  ]
+  games = games;
   priceWithDiscount(game: Game){
-    return (game.price * (1 - game.discount)).toFixed();
+    return priceWithDiscount(game)
   }
 }
-
-type Game = {
-  title: string;
-  discount: number;
-  price: number;
-  img: string;
-  subgames?: Game[];
-}
-
-
 </script>
 <style scoped lang='scss'>
 .games-wrapper {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0,1fr));
   grid-auto-rows: minmax(400px, 400px);
   grid-gap: 20px;
   justify-content: center;
@@ -129,15 +43,19 @@ type Game = {
   position: relative;
   transition: .6s;
   background-position: left center;
+  background-size: contain;
   border-radius: 10px;
   background-repeat: no-repeat;
+  border: 1px solid black;
   &:hover {
-    background-position: center;
     & .game-expand {
-      top: 75%;
+      top: 70%;
     }
     & .game-price {
-      bottom: 30%;
+      bottom: 35%;
+    }
+    & .game-img {
+      transform: scale(1.05);
     }
   }
   .game-price {
@@ -154,6 +72,16 @@ type Game = {
       padding: 6px 7px;
       box-shadow: 0px 20px 31px -14px rgba(34, 60, 80, 0.5) inset;
     }
+  }
+  .game-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: .6s;
   }
   .pct-price {
     background: #b2f64c;
@@ -184,12 +112,16 @@ type Game = {
       cursor: pointer;
       background-size: cover;
       background-repeat: no-repeat;
-      height: 80px;
+      box-shadow: -2px -1px 31px 4px rgba(34, 60, 80, 0.3) inset;
+      filter: grayscale(0.2);
+      height: 95px;
       transition: .3s;
       outline: 1px solid transparent;
       border-radius: 5px;
       &:hover {
         outline: 1px solid skyblue;
+        box-shadow: unset;
+        filter: grayscale(0);
       }
     }
   }
