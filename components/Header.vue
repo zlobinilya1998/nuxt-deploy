@@ -1,9 +1,9 @@
 <template>
-  <nav class='header'>
-    <div class='header-inner'>
-      <nuxt-link :to='link.url' v-for='link in navigation' :key='link.id' v-text='link.text' class='navigation-link'/>
+    <div class='header'>
+      <nav class='header-inner'>
+        <nuxt-link :to='link.url' v-for='link in navigation' :key='link.id' v-text='link.text' class='navigation-link'/>
+      </nav>
     </div>
-  </nav>
 </template>
 
 <script lang="ts">
