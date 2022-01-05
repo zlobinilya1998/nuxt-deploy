@@ -2,14 +2,14 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   target: "static",
   head: {
-    title: 'custom-library',
+    title: 'Добро пожаловать в наш магазин',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ru',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'Our shop is the ultimate destination for playing, discussing, and creating games.' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],

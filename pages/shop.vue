@@ -1,6 +1,6 @@
 <template>
   <div class='shop-page'>
-    <h2 class='top-sale'>Лидеры продаж</h2>
+    <h1 class='top-sale'>Лидеры продаж</h1>
     <div class='games-wrapper'>
       <GameCard v-for='(game,index) in games' :key='index' :game='game'/>
     </div>

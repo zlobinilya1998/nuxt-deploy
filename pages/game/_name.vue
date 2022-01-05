@@ -1,6 +1,6 @@
 <template>
   <div class='game-page'>
-    <h2 v-text='game.title' class='game-title'/>
+    <h1 v-text='game.title' class='game-title'/>
     <div class='game-content'>
       <div>
         <img style='max-width: 100%;outline: 1px solid gray' :src='game.img' alt='game-logo'>
