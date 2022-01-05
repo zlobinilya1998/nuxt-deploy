@@ -7,6 +7,13 @@ export type Game = {
   releaseDate: string;
   developer: string;
   description: string;
+  configurations: {
+    os: string;
+    core: string;
+    memory: string;
+    graph: string;
+    diskSpace: string;
+  };
 }
 export type GamePoster = {
   img: string;
@@ -31,6 +38,13 @@ export const games: Game[] = [
     ],
     releaseDate: '2020-12-10',
     developer: 'CD PROJECT RED',
+    configurations: {
+      os: '64-bit Windows 7, 64-bit Windows 8 (8.1) or 64-bit Windows 10',
+      core: 'Intel CPU Core i5-2500K 3.3GHz / AMD CPU Phenom II X4 940',
+      memory: '6 GB ОЗУ',
+      graph: 'Nvidia GPU GeForce GTX 660 / AMD GPU Radeon HD 7870',
+      diskSpace: '35 GB',
+    },
     description: 'Cyberpunk 2077 — приключенческая ролевая игра, действие которой происходит в мегаполисе Найт-Сити, где власть, роскошь и модификации тела ценятся выше всего. Вы играете за V, наёмника в поисках устройства, позволяющего обрести бессмертие.'
   },
   {
@@ -51,6 +65,13 @@ export const games: Game[] = [
     ],
     releaseDate: '2015-05-18',
     developer: 'CD PROJECT RED',
+    configurations: {
+      os: '64-bit Windows 7, 64-bit Windows 8 (8.1) or 64-bit Windows 10',
+      core: 'Intel CPU Core i5-2500K 3.3GHz / AMD CPU Phenom II X4 940',
+      memory: '6 GB ОЗУ',
+      graph: 'Nvidia GPU GeForce GTX 660 / AMD GPU Radeon HD 7870',
+      diskSpace: '35 GB',
+    },
     description: 'Когда в Северных королевствах бушует война, вы заключаете величайший контракт своей жизни — отыскать Дитя предназначения, живое оружие, которое может изменить облик мира.'
   },
   {
@@ -71,6 +92,13 @@ export const games: Game[] = [
     ],
     releaseDate: '2021-05-07',
     developer: 'Capcom',
+    configurations: {
+      os: '64-bit Windows 7, 64-bit Windows 8 (8.1) or 64-bit Windows 10',
+      core: 'Intel CPU Core i5-2500K 3.3GHz / AMD CPU Phenom II X4 940',
+      memory: '6 GB ОЗУ',
+      graph: 'Nvidia GPU GeForce GTX 660 / AMD GPU Radeon HD 7870',
+      diskSpace: '35 GB',
+    },
     description: 'Испытайте survival horror, каким его еще не видели, в 8-й части легендарной серии — Resident Evil Village. Проработанная до мелочей графика, напряженная игра от первого лица и превосходное повествование сделают ужас как никогда реальным и неотвратимым.'
   },
   {
@@ -91,6 +119,13 @@ export const games: Game[] = [
     ],
     releaseDate: '2016-04-11',
     developer: 'FromSoftware',
+    configurations: {
+      os: '64-bit Windows 7, 64-bit Windows 8 (8.1) or 64-bit Windows 10',
+      core: 'Intel CPU Core i5-2500K 3.3GHz / AMD CPU Phenom II X4 940',
+      memory: '6 GB ОЗУ',
+      graph: 'Nvidia GPU GeForce GTX 660 / AMD GPU Radeon HD 7870',
+      diskSpace: '35 GB',
+    },
     description: 'Dark Souls продолжит испытывать игроков на прочность в новой главе знаменитой серии, собравшей множество наград и определившей лицо жанра. Соберитесь с духом и погрузитесь во тьму!\n'
   },
 ]
