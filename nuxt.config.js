@@ -2,7 +2,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   target: "static",
   head: {
-    title: 'Добро пожаловать в наш магазин',
+    title: 'Добро пожаловать в наш игровой магазин',
     htmlAttrs: {
       lang: 'ru',
     },
