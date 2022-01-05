@@ -1,7 +1,7 @@
 <template>
   <div class='layout'>
     <Header/>
-    <div style='flex: 1;display: flex;padding: 40px 20px'>
+    <div style='flex: 1;display: flex;'>
         <div class='container' style='flex: 1 1 auto'>
           <transition mode='out-in' name='fade'>
             <Nuxt style='flex: 1 1 auto' :nuxt-child-key='$route.fullPath'/>

@@ -11,7 +11,7 @@ import { Component, Vue } from "vue-property-decorator"
 
 @Component({})
 export default class Header extends Vue {
-  navigation = [{text: 'Магазин',url:'/'},{text: 'Библиотека',url:'/library'},{text: 'Сообщество',url:'/community'},];
+  navigation = [{text: 'Магазин',url:'/shop'},{text: 'Библиотека',url:'/library'},{text: 'Сообщество',url:'/community'},];
 }
 </script>
 
@@ -27,7 +27,7 @@ export default class Header extends Vue {
      min-height: 65px;
    }
    .navigation-link {
-     font-size: 1.5rem;
+     font-size: 2.3rem;
      text-decoration: unset;
      color: #C5C6C7;
      transition: .3s;

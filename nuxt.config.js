@@ -16,6 +16,19 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '/',
+        redirect: '/shop',
+      },{
+        name: 'error',
+        path: '*',
+        component: resolve(__dirname, 'pages/404.vue')
+      })
+    }
+  },
   styleResources: {
     scss: '~/scss/variables.scss',
   },

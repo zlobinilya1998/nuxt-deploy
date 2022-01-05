@@ -63,7 +63,7 @@ export default class GameCard extends Vue {
     }
   }
   .game-title {
-    font-size: 1.4rem;
+    font-size: 2rem;
     z-index: 1;
     color: #FFFFFF;
     font-weight: bold;
@@ -98,16 +98,17 @@ export default class GameCard extends Vue {
     background: #94c941;
     color: black;
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 2rem;
     transition: .3s;
     border: 1px solid transparent;
   }
   .started-price {
     color: #afadad;
+    font-size: 2rem;
   }
   .final-price {
     color: #FFFFFF;
-    font-size: 1.3rem;
+    font-size: 2.2rem;
     font-weight: bold;
   }
   .game-expand {

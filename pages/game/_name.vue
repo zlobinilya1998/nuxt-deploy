@@ -15,28 +15,28 @@
           <p v-text='`Разработчик: ` + game.developer ' class='game-developer'/>
         </div>
       </div>
-      <div class='purchase-game'>
-        Купить {{game.title}}
-        <div class='purchase-price'>
-          <div v-text='`-` + gameDiscount'/>
-          <div>
-            <del v-text='game.price + " руб."'/>
-            <div v-text='priceWithDiscount + " руб."'/>
-          </div>
-          <button v-text="'В корзину'"/>
-        </div>
-      </div>
-      <div class='game-conf'>
-        <h2 class='conf-title'>Системные требования</h2>
-        <div class='conf-wrapper'>
-          <div>
-            <div v-text="'МИНИМАЛЬНЫЕ'"/>
-          </div>
-          <div>
-            <div v-text="'РЕКОМЕНДОВАННЫЕ'"/>
-          </div>
-        </div>
-      </div>
+<!--      <div class='purchase-game'>-->
+<!--        Купить {{game.title}}-->
+<!--        <div class='purchase-price'>-->
+<!--          <div v-text='`-` + gameDiscount'/>-->
+<!--          <div>-->
+<!--            <del v-text='game.price + " руб."'/>-->
+<!--            <div v-text='priceWithDiscount + " руб."'/>-->
+<!--          </div>-->
+<!--          <button v-text="'В корзину'"/>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class='game-conf'>-->
+<!--        <h2 class='conf-title'>Системные требования</h2>-->
+<!--        <div class='conf-wrapper'>-->
+<!--          <div>-->
+<!--            <div v-text="'МИНИМАЛЬНЫЕ'"/>-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <div v-text="'РЕКОМЕНДОВАННЫЕ'"/>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
     </div>
   </div>
 
@@ -80,14 +80,23 @@ export default class GamePage extends Vue {
     font-weight: bold;
   }
   .game-description {
-    font-size: 1.3rem;
+    font-size: 2.2rem;
   }
   .game-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 25px;
+    @media (max-width: $w-xs){
+      grid-template-columns: 1fr;
+    }
   }
   .game-info {
+  }
+  .game-release {
+    font-size: 1.8rem;
+  }
+  .game-developer {
+    font-size: 1.8rem;
   }
   .info-img {
     box-shadow: 0px 0px 25px 7px rgb(188, 197, 203, 0.2);
@@ -96,7 +105,7 @@ export default class GamePage extends Vue {
     border: 1px solid gray;
     padding: 20px;
     position: relative;
-    font-size: 1.4rem;
+    font-size: 2.5rem;
   }
   .purchase-price {
     position: absolute;
@@ -111,7 +120,7 @@ export default class GamePage extends Vue {
     grid-row: 3;
   }
   .conf-title {
-    font-size: 1.3rem;
+    font-size: 2.3rem;
     padding-bottom: 10px;
     border-bottom: 1px solid gray;
   }
