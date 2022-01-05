@@ -26,6 +26,17 @@
           <button v-text="'В корзину'"/>
         </div>
       </div>
+      <div class='game-conf'>
+        <h2 class='conf-title'>Системные требования</h2>
+        <div class='conf-wrapper'>
+          <div>
+            <div v-text="'МИНИМАЛЬНЫЕ'"/>
+          </div>
+          <div>
+            <div v-text="'РЕКОМЕНДОВАННЫЕ'"/>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -85,6 +96,7 @@ export default class GamePage extends Vue {
     border: 1px solid gray;
     padding: 20px;
     position: relative;
+    font-size: 1.4rem;
   }
   .purchase-price {
     position: absolute;
@@ -94,6 +106,19 @@ export default class GamePage extends Vue {
     align-items: stretch;
     grid-template-columns: repeat(3,minmax(60px,auto));
     background: black;
+  }
+  .game-conf {
+    grid-row: 3;
+  }
+  .conf-title {
+    font-size: 1.3rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+  }
+  .conf-wrapper {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
   }
 }
 </style>
